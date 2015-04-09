@@ -1,5 +1,6 @@
 [user]
 	name = Chris Scutcher
+	signingkey = A8CEF069
 [giggle]
 	main-window-maximized = true
 	main-window-geometry = 449x283+419+302
