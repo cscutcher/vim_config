@@ -1,0 +1,22 @@
+session_name: conductor
+windows:
+    - window_name: tnk
+      focus: true
+      panes:
+          - trunk && clear
+    - window_name: vim
+      panes:
+          - cf && cd src/conferencefactory && vim .
+    - window_name: run
+      panes:
+          - cf
+    - window_name: box
+      panes: 
+          - cf && fab box.shell
+          - cf && fab box.logtail
+    - window_name: cf
+      panes:
+          - cf
+    - window_name: temp
+      panes:
+          - tmux-share-server && exit
