@@ -64,3 +64,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+
+# Aliases shared with bash
+source $HOME_SH_LIBS/aliases.sh

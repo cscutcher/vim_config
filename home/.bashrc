@@ -145,25 +145,6 @@ log "Aliases and exports"
 export DEBFULLNAME='Chris Scutcher'
 export DEBEMAIL='chris.scutcher@ninebysix.co.uk'
 
-#Global
-alias apti="sudo aptitude install"
-alias aptis="aptitude search"
-alias sedit="sudo mcedit"
-alias halt="sudo halt"
-alias reboot="sudo reboot"
-alias root="sudo -i"
-alias c="cd"
-alias o="gnome-open"
-alias s="sudo"
-alias ka="killall"
-alias d="DISPLAY=':0' "
-ls /usr/bin/trash &> /dev/null || alias trash="trash-put"
-
-#Websites
-alias duckula="ssh duckula.ninebysix.co.uk"
-alias cswt="ssh critical-software.co.uk"
-alias webhost="ssh ninebysix.co.uk"
-
 #Virtualenv wrapper
 log "Set up virtualenv"
 
@@ -248,6 +229,8 @@ _hfab()
 # Assign the auto-completion function _fab for our command fab.
 complete -F _fab fab
 complete -F _hfab hfab
+
+source $HOME_SH_LIBS/aliases.sh
 
 #Host specific configs
 HOST_BASHRC=$HOME/.bashrc.d/$HOSTNAME.bashrc
