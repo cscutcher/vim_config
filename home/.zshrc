@@ -57,6 +57,7 @@ ZSH_CUSTOM=$HOMESICK_REPOS/safe_home/zsh_custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    fix_colors
     git
     git-extras
     pip

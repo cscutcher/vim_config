@@ -64,3 +64,6 @@ if [ $? -eq 0 ]; then
 else
     log_error "Unable to discover upstart sessions"
 fi
+
+# Virtualenv workon home
+export WORKON_HOME=$HOME/.virtualenvs
