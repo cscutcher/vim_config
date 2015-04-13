@@ -67,3 +67,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases shared with bash
 source $HOME_SH_LIBS/aliases.sh
+    
+# Is powerline installed
+POWERLINE_DIR=$(python -c 'import powerline; import os.path; print os.path.dirname(powerline.__file__)')
+if [[ $POWERLINE_DIR != "" ]]; then
+    log "Powerline installed"
+    powerline-daemon -q
+    . $POWERLINE_DIR/bindings/zsh/powerline.zsh
+else
+    log "Powerline not installed. Using fallback"
+fi
