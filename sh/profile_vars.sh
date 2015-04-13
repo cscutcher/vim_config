@@ -15,7 +15,6 @@ source $HOME_SH_LIBS/logging_functions.sh
 source $HOME_SH_LIBS/common_sh_functions.sh
 
 LOG_CONTEXT="profile_vars"
-log "Starting"
 
 export HOSTNAME=$( trim $(cat /etc/hostname) )
 
@@ -43,7 +42,6 @@ fi
 # Discover upstart stuff
 if [ $? -eq 0 ]; then
     NUM_SESSIONS=$(initctl list-sessions | wc -l)
-    log "Found $NUM_SESSIONS upstart sessions"
     if [ $NUM_SESSIONS -eq 0 ]; then
         log "Starting user upstart session"
         nohup init --user --confdir=$HOME/.config/upstart_local > $HOME/.user_upstart_log &
