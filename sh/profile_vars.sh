@@ -40,6 +40,7 @@ if [ $DROPBOX ] ; then
 fi
 
 # Discover upstart stuff
+which initctl > /dev/null
 if [ $? -eq 0 ]; then
     NUM_SESSIONS=$(initctl list-sessions | wc -l)
     if [ $NUM_SESSIONS -eq 0 ]; then
@@ -47,7 +48,7 @@ if [ $? -eq 0 ]; then
         nohup init --user --confdir=$HOME/.config/upstart_local > $HOME/.user_upstart_log &
     fi
 
-    for i in `seq 1 10`; do 
+    for i in `seq 1 10`; do
         NUM_SESSIONS=$(initctl list-sessions | wc -l)
         if [ $NUM_SESSIONS -eq 1 ]; then
             break
