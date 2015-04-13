@@ -18,3 +18,8 @@ function log
 {
     echo $* | log_prefix_stdout
 }
+
+function log_error
+{
+    log "ERROR: $*" 1>&2
+}
