@@ -56,7 +56,23 @@ ZSH_CUSTOM=$HOMESICK_REPOS/safe_home/zsh_custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip fabric debian github docker homeshick)
+plugins=(
+    git
+    git-extras
+    pip
+    fabric
+    debian
+    docker
+    homeshick
+    command-not-found 
+    common-aliases
+    jsontools # Adds pp_json is_json urlencode_json urldecode_json
+    virtualenvwrapper
+    dirhistory # Alt-right alt-left to go back forth between dir
+    wd # wd add some_dir ; wd some_dir
+    mosh
+    colorize # Syntax highlighting type cat
+)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
