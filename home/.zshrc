@@ -58,6 +58,7 @@ ZSH_CUSTOM=$HOMESICK_REPOS/safe_home/zsh_custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     fix_colors
+    fix_keys
     git
     git-extras
     pip

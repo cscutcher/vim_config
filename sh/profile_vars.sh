@@ -68,3 +68,5 @@ fi
 
 # Virtualenv workon home
 export WORKON_HOME=$HOME/.virtualenvs
+
+export EDITOR="vim"
