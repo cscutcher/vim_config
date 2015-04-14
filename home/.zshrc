@@ -74,6 +74,7 @@ plugins=(
     wd # wd add some_dir ; wd some_dir
     mosh
     colorize # Syntax highlighting type cat
+    keychain
 )
 
 # User configuration
