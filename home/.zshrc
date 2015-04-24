@@ -99,3 +99,6 @@ if [[ $POWERLINE_DIR != "" ]]; then
 else
     log "Powerline not installed. Using fallback"
 fi
+
+# Fuck
+alias fuck='eval $(thefuck $(fc -ln -1))'
