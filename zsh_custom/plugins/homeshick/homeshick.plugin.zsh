@@ -8,5 +8,4 @@ fpath=($HOMESHICK_REPO/completions $fpath)
 compinit
 
 # Refresh local
-homeshick --quiet --batch refresh | log_prefix_stdout
-
+homeshick refresh
