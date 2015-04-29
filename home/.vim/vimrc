@@ -175,3 +175,7 @@ set modeline
 let g:UltiSnipsExpandTrigger="<s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<s-tab>"
 let g:UltiSnipsJumpBackwardTrigger="<tab>"
+
+
+" Search recursively for tags
+set tags=tags;/
