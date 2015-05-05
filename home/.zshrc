@@ -102,3 +102,7 @@ fi
 
 # Fuck
 alias fuck='eval $(thefuck $(fc -ln -1))'
+
+if [[ $SSLPASS == "" ]]; then
+    export SSLPASS="ssh-ask-pass"
+fi
