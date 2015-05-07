@@ -10,3 +10,5 @@ ls /usr/bin/trash &> /dev/null || alias trash="trash-put"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+alias oct_perms='stat -c "%a %n"'
