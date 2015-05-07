@@ -70,3 +70,4 @@ fi
 export WORKON_HOME=$HOME/.virtualenvs
 
 export EDITOR="vim"
+export DEFAULT_PGP_KEY="A8CEF069"
