@@ -77,6 +77,7 @@ plugins=(
     wd # wd add some_dir ; wd some_dir
     mosh
     colorize # Syntax highlighting type cat
+    askpass
     keychain
 )
 
@@ -86,10 +87,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
-
 # Aliases shared with bash
 source $HOME_SH_LIBS/aliases.sh
-    
+
 # Is powerline installed
 export POWERLINE_DIR=$(python -c 'import powerline; import os.path; print os.path.dirname(powerline.__file__)')
 if [[ $POWERLINE_DIR != "" ]]; then
@@ -102,7 +102,3 @@ fi
 
 # Fuck
 alias fuck='eval $(thefuck $(fc -ln -1))'
-
-if [[ $SSLPASS == "" ]]; then
-    export SSLPASS="ssh-ask-pass"
-fi
