@@ -21,9 +21,7 @@ function gpg_key_good {
 
 
 log "Setting up a keyring/keychain"
-if pidof /usr/bin/gnome-keyring-daemon > /dev/null && [ -n "$DISPLAY" ] ; then
-    log "Found keyring. Doing nothing."
-elif hash keychain 2> /dev/null; then
+if hash keychain 2> /dev/null; then
     log "Found keychain"
     if [ -z "$DISPLAY" ]; then 
         GUI_ARG="--nogui"
