@@ -32,7 +32,7 @@ if hash keychain 2> /dev/null; then
     source $HOME/.keychain/$HOSTNAME-sh
     source $HOME/.keychain/$HOSTNAME-sh-gpg
 
-    gpg_key_good
+    #gpg_key_good
 else
     log "Unable to load a keyring!"
 fi
