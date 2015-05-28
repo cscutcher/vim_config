@@ -1,1 +1,0 @@
-../../bin/get_dropbox_folder.sh
