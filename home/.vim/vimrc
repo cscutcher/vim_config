@@ -74,6 +74,9 @@ autocmd FileType make setlocal noexpandtab
 
 "Enable deleting of useless whitespace on python
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+autocmd BufWritePre *.cpp normal m`:%s/\s\+$//e ``
+autocmd BufWritePre *.hpp normal m`:%s/\s\+$//e ``
+autocmd BufWritePre *.h normal m`:%s/\s\+$//e ``
 autocmd BufWritePre *.rst normal m`:%s/\s\+$//e ``
 
 "Disable spellcheck in erlang
