@@ -180,5 +180,8 @@ let g:UltiSnipsJumpForwardTrigger="<s-tab>"
 let g:UltiSnipsJumpBackwardTrigger="<tab>"
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ctags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search recursively for tags
 set tags=tags;/
