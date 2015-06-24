@@ -191,3 +191,14 @@ set tags=tags;/
 " localvimrc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:localvimrc_persistent=1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" detect file changes inbackground
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd CursorHold * call Timer()
+function! Timer()
+    call feedkeys("f\e")
+    checktime
+endfunction
+set updatetime=5000  " milliseconds
