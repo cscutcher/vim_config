@@ -85,6 +85,7 @@ autocmd FileType erlang setlocal nospell
 "Prevent using " on python
 autocmd FileType python imap <buffer> <nowait> " '
 autocmd FileType python inoremap <buffer> <nowait> \" "
+autocmd FileType python 2mat ErrorMsg '\%81v.'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
