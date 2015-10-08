@@ -64,6 +64,7 @@ if has("gui_running")
 endif
 
 set colorcolumn=99
+2mat ErrorMsg '\%81v.'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific auto commands
@@ -85,7 +86,6 @@ autocmd FileType erlang setlocal nospell
 "Prevent using " on python
 autocmd FileType python imap <buffer> <nowait> " '
 autocmd FileType python inoremap <buffer> <nowait> \" "
-autocmd FileType python 2mat ErrorMsg '\%81v.'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
