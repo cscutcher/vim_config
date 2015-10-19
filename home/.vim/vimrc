@@ -80,9 +80,7 @@ endif
 set colorcolumn=99
 
 " Highlight long lines
-:au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('Search', '\%<81v.\%>77v', -1) | endif
 autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1) | endif
 
 
