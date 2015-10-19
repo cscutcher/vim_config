@@ -39,6 +39,20 @@ set spl=en_gb spell
 "Enable Mouse
 set mouse=a
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocmd settings for detecting splits and new windows
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autocmd that will set up the w:created variable
+autocmd VimEnter * autocmd WinEnter * let w:created=1
+
+" Consider this one, since WinEnter doesn't fire on the first window created when Vim launches.
+" You'll need to set any options for the first window in your vimrc,
+" or in an earlier VimEnter autocmd if you include this
+autocmd VimEnter * let w:created=1
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +78,13 @@ if has("gui_running")
 endif
 
 set colorcolumn=99
-2mat ErrorMsg '\%81v.'
+
+" Highlight long lines
+:au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('Search', '\%<81v.\%>77v', -1) | endif
+autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1) | endif
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific auto commands
