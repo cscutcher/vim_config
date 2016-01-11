@@ -97,6 +97,7 @@ autocmd BufWritePre *.cpp normal m`:%s/\s\+$//e ``
 autocmd BufWritePre *.hpp normal m`:%s/\s\+$//e ``
 autocmd BufWritePre *.h normal m`:%s/\s\+$//e ``
 autocmd BufWritePre *.rst normal m`:%s/\s\+$//e ``
+autocmd BufWritePre *.txt normal m`:%s/\s\+$//e ``
 
 "Disable spellcheck in erlang
 autocmd FileType erlang setlocal nospell
