@@ -91,13 +91,14 @@ autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('ErrorMsg', '\%>8
 "Use tabs in makefiles
 autocmd FileType make setlocal noexpandtab
 
-"Enable deleting of useless whitespace on python
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-autocmd BufWritePre *.cpp normal m`:%s/\s\+$//e ``
-autocmd BufWritePre *.hpp normal m`:%s/\s\+$//e ``
-autocmd BufWritePre *.h normal m`:%s/\s\+$//e ``
-autocmd BufWritePre *.rst normal m`:%s/\s\+$//e ``
-autocmd BufWritePre *.txt normal m`:%s/\s\+$//e ``
+"Enable deleting of useless whitespace on some files
+autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.cpp :%s/\s\+$//e
+autocmd BufWritePre *.hpp :%s/\s\+$//e
+autocmd BufWritePre *.h :%s/\s\+$//e
+autocmd BufWritePre *.rst :%s/\s\+$//e
+autocmd BufWritePre *.txt :%s/\s\+$//e
+autocmd BufWritePre *.groovy :%s/\s\+$//e
 
 "Disable spellcheck in erlang
 autocmd FileType erlang setlocal nospell
