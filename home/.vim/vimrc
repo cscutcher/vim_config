@@ -33,9 +33,6 @@ set shiftwidth=4
 "Use spaces instead of tabs in insert
 set expandtab
 
-"Enable spelling
-set spl=en_gb spell
-
 "Enable Mouse
 set mouse=a
 
