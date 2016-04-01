@@ -133,6 +133,18 @@ endfunction
 command!  -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command!  -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TMUX helper
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function TMUXCopy() range
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| tmux load-buffer -')
+endfunction
+
+command -range=% -nargs=0 TMUXCopy :<line1>,<line2>call TMUXCopy()
+command TMUXPaste :read! tmux save-buffer -
+command TMUXPasteReg :let @" = system("tmux save-buffer -")
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python Mode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
