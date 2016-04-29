@@ -77,8 +77,27 @@ endif
 set colorcolumn=99
 
 " Highlight long lines
-:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1) | endif
+function! HighlightLongLines()
+    if !exists('w:hightlight_long_lines_length')
+        let w:hightlight_long_lines_length=80
+    end
+    call ClearHighlightLongLines()
+    let w:hightlight_long_lines_match=matchadd('ErrorMsg', '\%>'. w:hightlight_long_lines_length . 'v.\+', -1)
+endfunction
+
+function! ClearHighlightLongLines()
+    if exists('w:hightlight_long_lines_match')
+        call matchdelete(w:hightlight_long_lines_match)
+        unlet w:hightlight_long_lines_match
+    end
+endfunction
+
+command!  -bar -nargs=0 ClearHighlightLongLines call ClearHighlightLongLines()
+command!  -bar -nargs=0 HighlightLongLines call HighlightLongLines()
+
+autocmd BufWinEnter * call HighlightLongLines()
+autocmd WinEnter * if !exists('w:created') | call HighlightLongLines() | endif
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
