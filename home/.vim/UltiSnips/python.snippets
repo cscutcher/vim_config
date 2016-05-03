@@ -27,3 +27,51 @@ endsnippet
 snippet pyd
 #$2 pylint:disable=$1
 endsnippet
+
+
+snippet setup
+# -*- coding: utf-8 -*-
+"""
+$2
+"""
+import logging
+from setuptools import setup, find_packages
+
+NAME = "$1"
+DEV_LOGGER = logging.getLogger("{}.setup".format(NAME))
+
+setup(
+    name=NAME,
+    version="0.1",
+
+    # metadata for upload to PyPI
+    author = "Chris Scutcher",
+    author_email = "chris.scutcher@ninebysix.co.uk",
+    description=__doc__,
+    license="PSF",
+    #keywords = "hello world example examples",
+    #url = "http://example.com/HelloWorld/",   # project home page, if any
+
+    packages=find_packages(),
+    #install_requires = [
+	#	'docutils>=0.3'
+	#],
+
+    #package_data = {
+    #    # If any package contains *.txt or *.rst files, include them:
+    #    '': ['*.txt', '*.rst'],
+    #    # And include any *.msg files found in the 'hello' package, too:
+    #    'hello': ['*.msg'],
+    #},
+
+    #entry_points={
+    #    'console_scripts': [
+    #        'foo = my_package.some_module:main_func',
+    #        'bar = other_module:some_func',
+    #    ],
+    #    'gui_scripts': [
+    #        'baz = my_package_gui:start_func',
+    #    ]
+    #}
+)
+endsnippet
