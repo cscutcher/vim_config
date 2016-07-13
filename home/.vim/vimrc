@@ -3,35 +3,28 @@ set encoding=utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Loading
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'SirVer/ultisnips'
+Plug 'airblade/vim-gitgutter'
+Plug 'amoffat/snake'
+Plug 'benekastah/neomake'
+Plug 'easymotion/vim-easymotion'
+Plug 'embear/vim-localvimrc'
+Plug 'ervandew/supertab'
+Plug 'klen/python-mode'
+Plug 'nvie/vim-flake8'
+Plug 'rhysd/vim-clang-format'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-pathogen'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/ConflictMotions'
+Plug 'vim-scripts/CountJump'
+Plug 'vim-scripts/ingo-library'
 
-call pathogen#infect()
-call pathogen#helptags()
-
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'nvie/vim-flake8'
-Plugin 'tpope/vim-pathogen'
-Plugin 'tpope/vim-fugitive'
-Plugin 'robbyrussell/oh-my-zsh'
-Plugin 'vim-scripts/ConflictMotions'
-Plugin 'vim-scripts/CountJump'
-Plugin 'vim-scripts/ingo-library'
-Plugin 'embear/vim-localvimrc'
-Plugin 'scrooloose/nerdtree'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'vim-airline/vim-airline'
-Plugin 'amoffat/snake'
-Plugin 'scrooloose/syntastic'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'benekastah/neomake'
-Plugin 'easymotion/vim-easymotion'
-
-call vundle#end()
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Config
