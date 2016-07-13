@@ -1,6 +1,36 @@
 set encoding=utf-8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Detect python version
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+python << endpython
+import os.path
+import vim
+
+search_directory = os.path.abspath(os.getcwd())
+
+project_python_version = None
+
+while project_python_version is None:
+    try:
+        project_python_version = open(
+            os.path.join(search_directory, ".python_version")).read().strip()
+    except IOError:
+        search_directory = os.path.dirname(search_directory)
+
+    if search_directory == "/":
+        break
+
+if project_python_version is None:
+    pass
+elif project_python_version == "3":
+    vim.command('let g:pymode_python = "python3"')
+else:
+    vim.command('let g:pymode_python = "python2"')
+
+endpython
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Loading
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -53,9 +83,6 @@ set expandtab
 
 "Enable Mouse
 set mouse=a
-
-set exrc
-set secure
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocmd settings for detecting splits and new windows
