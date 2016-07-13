@@ -1,12 +1,37 @@
 set encoding=utf-8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pathogen
+" Plugin Loading
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
 filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 call pathogen#infect()
 call pathogen#helptags()
 
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'nvie/vim-flake8'
+Plugin 'tpope/vim-pathogen'
+Plugin 'tpope/vim-fugitive'
+Plugin 'robbyrussell/oh-my-zsh'
+Plugin 'vim-scripts/ConflictMotions'
+Plugin 'vim-scripts/CountJump'
+Plugin 'vim-scripts/ingo-library'
+Plugin 'embear/vim-localvimrc'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'vim-airline/vim-airline'
+Plugin 'amoffat/snake'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'benekastah/neomake'
+Plugin 'easymotion/vim-easymotion'
+
+call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Config
