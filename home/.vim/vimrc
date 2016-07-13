@@ -36,6 +36,8 @@ set expandtab
 "Enable Mouse
 set mouse=a
 
+set exrc
+set secure
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocmd settings for detecting splits and new windows
