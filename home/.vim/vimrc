@@ -166,10 +166,6 @@ autocmd FileType make setlocal noexpandtab
 "Disable spellcheck in erlang
 autocmd FileType erlang setlocal nospell
 
-"Prevent using " on python
-autocmd FileType python imap <buffer> <nowait> " '
-autocmd FileType python inoremap <buffer> <nowait> \" "
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
