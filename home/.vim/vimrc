@@ -200,7 +200,7 @@ command!  -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 " TMUX helper
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function TMUXCopy() range
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| tmux load-buffer -')
+  execute a:firstline.",".a:lastline." write ! cat | tmux load-buffer -"
 endfunction
 
 command -range=% -nargs=0 TMUXCopy :<line1>,<line2>call TMUXCopy()
