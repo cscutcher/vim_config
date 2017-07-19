@@ -166,6 +166,10 @@ autocmd FileType make setlocal noexpandtab
 "Disable spellcheck in erlang
 autocmd FileType erlang setlocal nospell
 
+"Shorter indent for yaml
+autocmd FileType yaml setlocal tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
