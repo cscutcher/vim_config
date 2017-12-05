@@ -155,16 +155,21 @@ autocmd WinEnter * if !exists('w:created') | call HighlightLongLines() | endif
 autocmd FileType make setlocal noexpandtab
 
 "Enable deleting of useless whitespace on some files
-"autocmd BufWritePre *.py :%s/\s\+$//e
-"autocmd BufWritePre *.cpp :%s/\s\+$//e
-"autocmd BufWritePre *.hpp :%s/\s\+$//e
-"autocmd BufWritePre *.h :%s/\s\+$//e
-"autocmd BufWritePre *.rst :%s/\s\+$//e
-"autocmd BufWritePre *.txt :%s/\s\+$//e
-"autocmd BufWritePre *.groovy :%s/\s\+$//e
+autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.cpp :%s/\s\+$//e
+autocmd BufWritePre *.hpp :%s/\s\+$//e
+autocmd BufWritePre *.h :%s/\s\+$//e
+autocmd BufWritePre *.rst :%s/\s\+$//e
+autocmd BufWritePre *.txt :%s/\s\+$//e
+autocmd BufWritePre *.groovy :%s/\s\+$//e
+autocmd BufWritePre *.yaml :%s/\s\+$//e
 
 "Disable spellcheck in erlang
 autocmd FileType erlang setlocal nospell
+
+"Shorter indent for yaml
+autocmd FileType yaml setlocal tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
