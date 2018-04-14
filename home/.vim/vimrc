@@ -336,3 +336,27 @@ map  N <Plug>(easymotion-prev)
 " YAPF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command Yapf :0,$!yapf
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Script to wrap lines without needing to set textwidth
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" From https://vi.stackexchange.com/a/11610
+function! ParagraphToEightyChars()
+   while (len(getline(".")) > 79)
+      normal! 0
+      " Find the first white-space character before the 81st character.
+      call search('\(\%81v.*\)\@<!\s\(.*\s.\{-}\%81v\)\@!', 'c', line('.'))
+      " Replace it with a new line.
+      exe "normal! r\<CR>"
+      " If the next line has words, join it to avoid weird paragraph breaks.
+      if (getline(line('.')+1) =~ '\w')
+         normal! J
+      endif
+   endwhile
+   " Trim any accidental trailing whitespace
+   :s/\s\+$//e
+endfunction
+
+
+" I can never read these mappings. It's alt-shift-j!
+nnoremap <silent><A-J> :call ParagraphToEightyChars()<CR>
