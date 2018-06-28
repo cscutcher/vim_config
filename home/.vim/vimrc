@@ -171,6 +171,9 @@ autocmd FileType erlang setlocal nospell
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2
 
+"Prevent using " on python
+autocmd FileType python imap <buffer> <nowait> " '
+autocmd FileType python inoremap <buffer> <nowait> \" "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
