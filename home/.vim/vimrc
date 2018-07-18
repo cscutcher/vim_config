@@ -141,6 +141,8 @@ endfunction
 
 command!  -bar -nargs=0 ClearHighlightLongLines call ClearHighlightLongLines()
 command!  -bar -nargs=0 HighlightLongLines call HighlightLongLines()
+command!  -bar -nargs=0 LongLinesHighlightClear call ClearHighlightLongLines()
+command!  -bar -nargs=0 LongLinesHighlight call HighlightLongLines()
 
 autocmd BufWinEnter * call HighlightLongLines()
 autocmd WinEnter * if !exists('w:created') | call HighlightLongLines() | endif
