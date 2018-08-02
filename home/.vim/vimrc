@@ -126,7 +126,7 @@ set colorcolumn=99
 " Highlight long lines
 function! HighlightLongLines()
     if !exists('w:hightlight_long_lines_length')
-        let w:hightlight_long_lines_length=80
+        let w:hightlight_long_lines_length=79
     end
     call ClearHighlightLongLines()
     let w:hightlight_long_lines_match=matchadd('ErrorMsg', '\%>'. w:hightlight_long_lines_length . 'v.\+', -1)
