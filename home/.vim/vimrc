@@ -121,7 +121,7 @@ if has("gui_running")
     endif
 endif
 
-set colorcolumn=99
+set colorcolumn=80
 
 " Highlight long lines
 function! HighlightLongLines()
