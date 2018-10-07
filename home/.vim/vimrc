@@ -53,6 +53,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ConflictMotions'
 Plug 'vim-scripts/CountJump'
 Plug 'vim-scripts/ingo-library'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -100,8 +101,6 @@ autocmd VimEnter * let w:created=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <silent><F3> :NEXTCOLOR<cr>
-map <silent><F2> :PREVCOLOR<cr>
 
 "Block F1 because of weird putty issue
 map <F1> <NOP>
@@ -109,8 +108,14 @@ map <F1> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Look and feel
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colo fruity
+" Uncomment following 2 lines for quickly trying multiple themes
+" map <silent><F3> :NEXTCOLOR<cr>
+" map <silent><F2> :PREVCOLOR<cr>
 
+if $COLORTERM == 'truecolor'
+  set t_Co=256
+  set termguicolors
+endif
 "Specific theming for running under gui
 if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
@@ -120,6 +125,15 @@ if has("gui_running")
         :set guifont="Andale Mono" 10
     endif
 endif
+
+" Theme
+if (has("termguicolors"))
+    set termguicolors
+    colo tender
+else
+    colo fruity
+endif
+
 
 set colorcolumn=80
 
@@ -366,3 +380,5 @@ endfunction
 
 " I can never read these mappings. It's alt-shift-j!
 nnoremap <silent><A-J> :call ParagraphToEightyChars()<CR>
+
+
