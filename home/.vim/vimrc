@@ -37,13 +37,16 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
-Plug 'amoffat/snake'
+" I don't use this yet, but it's too cool to forget
+" Snake (SNAAAAAAAAAKKKE) is a Python module for Vim that let's you use Python
+" to its fullest extent to enhance Vim.
+" https://github.com/amoffat/snake
+" Plug 'amoffat/snake'
 Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
 Plug 'ervandew/supertab'
 Plug 'klen/python-mode'
-Plug 'nvie/vim-flake8'
 Plug 'rhysd/vim-clang-format'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -96,12 +99,9 @@ autocmd VimEnter * autocmd WinEnter * let w:created=1
 " or in an earlier VimEnter autocmd if you include this
 autocmd VimEnter * let w:created=1
 
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 "Block F1 because of weird putty issue
 map <F1> <NOP>
 
@@ -136,32 +136,6 @@ endif
 
 
 set colorcolumn=80
-
-" Highlight long lines
-function! HighlightLongLines()
-    if !exists('w:hightlight_long_lines_length')
-        let w:hightlight_long_lines_length=79
-    end
-    call ClearHighlightLongLines()
-    let w:hightlight_long_lines_match=matchadd('ErrorMsg', '\%>'. w:hightlight_long_lines_length . 'v.\+', -1)
-endfunction
-
-function! ClearHighlightLongLines()
-    if exists('w:hightlight_long_lines_match')
-        call matchdelete(w:hightlight_long_lines_match)
-        unlet w:hightlight_long_lines_match
-    end
-endfunction
-
-command!  -bar -nargs=0 ClearHighlightLongLines call ClearHighlightLongLines()
-command!  -bar -nargs=0 HighlightLongLines call HighlightLongLines()
-command!  -bar -nargs=0 LongLinesHighlightClear call ClearHighlightLongLines()
-command!  -bar -nargs=0 LongLinesHighlight call HighlightLongLines()
-
-autocmd BufWinEnter * call HighlightLongLines()
-autocmd WinEnter * if !exists('w:created') | call HighlightLongLines() | endif
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific auto commands
