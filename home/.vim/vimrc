@@ -330,7 +330,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
-let g:syntastic_python_checkers = ["pylava"]
+let g:syntastic_python_checkers = ["pylama"]
+let g:syntastic_python_pylama_exec = "pylava"
 let g:syntastic_rst_checkers = ["rstcheck"]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
