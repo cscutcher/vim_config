@@ -190,6 +190,8 @@ autocmd FileType yaml setlocal shiftwidth=2
 "Prevent using " on python
 autocmd FileType python imap <buffer> <nowait> " '
 autocmd FileType python inoremap <buffer> <nowait> \" "
+"Set textwidth to 79 for python files
+autocmd FileType python setlocal textwidth=79
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim Spaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
