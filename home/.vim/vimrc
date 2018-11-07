@@ -57,6 +57,7 @@ Plug 'vim-scripts/ConflictMotions'
 Plug 'vim-scripts/CountJump'
 Plug 'vim-scripts/ingo-library'
 Plug 'jacoborus/tender.vim'
+Plug 'ambv/black'
 
 call plug#end()
 
