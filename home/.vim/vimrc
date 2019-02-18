@@ -58,6 +58,7 @@ Plug 'vim-scripts/CountJump'
 Plug 'vim-scripts/ingo-library'
 Plug 'jacoborus/tender.vim'
 Plug 'ambv/black'
+Plug 'fisadev/vim-isort'
 
 call plug#end()
 
