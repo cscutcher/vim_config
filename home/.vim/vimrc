@@ -238,6 +238,10 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow editing using relative to buffer path in commands
+" i.e. to edit a file relative to the currently open one write
+" :e %/
+" and the %/ will autoexpand to the directory of the file being currently
+" edited.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! SetBufDirectory()
     let l:path = expand("%")
