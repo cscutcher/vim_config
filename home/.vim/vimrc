@@ -62,6 +62,11 @@ Plug 'jacoborus/tender.vim'
 Plug 'ambv/black'
 " Python import sorter
 Plug 'fisadev/vim-isort'
+" Add searching with Python Syntax
+Plug 'mbr/vim-pyre'
+" Collaborative editing tool
+" TODO: Get floobits working
+Plug 'floobits/floobits-neovim'
 
 call plug#end()
 
