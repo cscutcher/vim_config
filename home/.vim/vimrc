@@ -56,8 +56,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ConflictMotions'
 Plug 'vim-scripts/CountJump'
 Plug 'vim-scripts/ingo-library'
+" Nice full colorscheme
 Plug 'jacoborus/tender.vim'
+" Python formatter
 Plug 'ambv/black'
+" Python import sorter
 Plug 'fisadev/vim-isort'
 
 call plug#end()
