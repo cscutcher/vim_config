@@ -178,6 +178,11 @@ command! LowColorMode call LowColorMode()
 
 set colorcolumn=80
 
+if $COLOR_MODE == "light"
+    OutsideMode
+else
+    DarkMode
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific auto commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
