@@ -136,6 +136,9 @@ else
     colo fruity
 endif
 
+" Theme for outside
+command! SunMode :colo tolerable
+command! DarkMode :colo tender
 
 set colorcolumn=80
 
