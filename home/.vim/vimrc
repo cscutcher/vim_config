@@ -56,9 +56,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ConflictMotions'
 Plug 'vim-scripts/CountJump'
 Plug 'vim-scripts/ingo-library'
+" Nice full colorscheme
 Plug 'jacoborus/tender.vim'
+" Python formatter
 Plug 'ambv/black'
+" Python import sorter
 Plug 'fisadev/vim-isort'
+" Add searching with Python Syntax
+Plug 'mbr/vim-pyre'
+" Collaborative editing tool
+" TODO: Get floobits working
+Plug 'floobits/floobits-neovim'
 
 call plug#end()
 
