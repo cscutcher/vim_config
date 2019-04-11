@@ -67,6 +67,11 @@ Plug 'mbr/vim-pyre'
 " Collaborative editing tool
 " TODO: Get floobits working
 Plug 'floobits/floobits-neovim'
+" Designed as a bright theme with pastel 'retro groove' colors and light/dark
+" mode switching in the way of solarized. The main focus when developing
+" gruvbox is to keep colors easily distinguishable, contrast enough and still
+" pleasant for the eyes.
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -137,16 +142,39 @@ if has("gui_running")
 endif
 
 " Theme
-if (has("termguicolors"))
-    set termguicolors
-    colo tender
-else
-    colo fruity
-endif
 
-" Theme for outside
-command! SunMode :colo tolerable
-command! DarkMode :colo tender
+function! DarkMode()
+    set background=dark 
+    if (has("termguicolors"))
+        set termguicolors
+        colo tender
+    else
+        colo fruity
+    endif
+endfunction
+
+function! LightMode()
+    set background=light
+    let g:gruvbox_contrast_light="medium"
+    colo gruvbox
+endfunction
+
+function! OutsideMode()
+    set background=light
+    let g:gruvbox_contrast_light="hard"
+    colo gruvbox
+endfunction
+
+function! LowColorMode()
+    set background=dark 
+    let g:gruvbox_termcolors=16
+    color gruvbox
+endfunction
+
+command! LightMode call LightMode()
+command! DarkMode call DarkMode()
+command! OutsideMode call OutsideMode()
+command! LowColorMode call LowColorMode()
 
 set colorcolumn=80
 
