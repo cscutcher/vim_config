@@ -45,7 +45,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
-Plug 'ervandew/supertab'
 Plug 'klen/python-mode'
 Plug 'rhysd/vim-clang-format'
 Plug 'scrooloose/nerdtree'
@@ -72,6 +71,12 @@ Plug 'floobits/floobits-neovim'
 " gruvbox is to keep colors easily distinguishable, contrast enough and still
 " pleasant for the eyes.
 Plug 'morhetz/gruvbox'
+" Let's try autocomplete again
+Plug 'Valloric/YouCompleteMe'
+" Use supertab to handle tab completion
+Plug 'ervandew/supertab'
+" Sublime Style Multiple Cursors
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
