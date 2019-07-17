@@ -77,6 +77,18 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ervandew/supertab'
 " Sublime Style Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
+" Useful review tool
+Plug 'junkblocker/patchreview-vim'
+
+" Review PRs from VIM
+" Sadly both have bugs for enterprise github at the moment
+" Requires yaourt -S ruby-neovim
+Plug 'codegram/vim-codereview'
+Plug 'tiev/githubreview.vim'
+
+" Critic looked good to see all PRs but seems not to work.
+" Plug 'AGhost-7/critiq.vim'
+
 " PyMode again
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
