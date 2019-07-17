@@ -22,7 +22,7 @@ while project_python_version is None:
         break
 
 if project_python_version is None:
-    pass
+    vim.command('let g:pymode_python = "python3"')
 elif project_python_version == "3":
     vim.command('let g:pymode_python = "python3"')
 else:
@@ -77,6 +77,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ervandew/supertab'
 " Sublime Style Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
+" PyMode again
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 call plug#end()
 
@@ -262,8 +264,8 @@ command TMUXPasteReg :let @" = system("tmux save-buffer -")
 " Python Mode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pymode_folding = 0
-let g:pymode_rope_guess_project = 0
-let g:pymode_rope = 0
+let g:pymode_rope_guess_project = 1
+let g:pymode_rope = 1
 
 " Prefer line length of 99
 let g:pymode_options_max_line_length = 99
