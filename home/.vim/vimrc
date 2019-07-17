@@ -72,7 +72,7 @@ Plug 'floobits/floobits-neovim'
 " pleasant for the eyes.
 Plug 'morhetz/gruvbox'
 " Let's try autocomplete again
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Use supertab to handle tab completion
 Plug 'ervandew/supertab'
 " Sublime Style Multiple Cursors
