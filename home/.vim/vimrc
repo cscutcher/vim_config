@@ -464,3 +464,21 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " details.
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Duplicate Session Command
+" From https://vi.stackexchange.com/a/3899
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! -bar DuplicateTabpane
+      \ let s:sessionoptions = &sessionoptions |
+      \ try |
+      \   let &sessionoptions = 'blank,help,folds,winsize,localoptions' |
+      \   let s:file = tempname() |
+      \   execute 'mksession ' . s:file |
+      \   tabnew |
+      \   execute 'source ' . s:file |
+      \ finally |
+      \   silent call delete(s:file) |
+      \   let &sessionoptions = s:sessionoptions |
+      \   unlet! s:file s:sessionoptions |
+      \ endtry
