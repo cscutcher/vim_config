@@ -92,6 +92,11 @@ Plug 'tiev/githubreview.vim'
 " PyMode again
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
+" Better sessions
+Plug 'xolox/vim-session'
+" Required by vim-session
+Plug 'xolox/vim-misc'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -482,3 +487,15 @@ command! -bar DuplicateTabpane
       \   let &sessionoptions = s:sessionoptions |
       \   unlet! s:file s:sessionoptions |
       \ endtry
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Options for vim-session
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" By default don't ask to save session
+let g:session_autosave = 'no'
+
+" But enable prompting if we add tabs or windows
+autocmd WinNew * :let g:session_autosave = 'prompt'
+autocmd TabNew * :let g:session_autosave = 'prompt'
+
