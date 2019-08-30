@@ -506,8 +506,15 @@ command! -bar DuplicateTabpane
 
 " By default don't ask to save session
 let g:session_autosave = 'no'
+" Don't autoload session
+let g:session_autoload = 'no'
+
+function! EnableAutoSessionSave()
+    if !exists('g:session_disable_autosave_detection') || g:session_disable_autosave_detection !=? 'yes'
+        let g:session_autosave = 'prompt'
+    endif
+endfunction
 
 " But enable prompting if we add tabs or windows
-autocmd WinNew * :let g:session_autosave = 'prompt'
-autocmd TabNew * :let g:session_autosave = 'prompt'
-
+autocmd WinNew * call EnableAutoSessionSave()
+autocmd TabNew * call EnableAutoSessionSave()
