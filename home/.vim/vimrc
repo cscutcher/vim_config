@@ -98,6 +98,9 @@ Plug 'xolox/vim-session'
 " Required by vim-session
 Plug 'xolox/vim-misc'
 
+" Better completion for python + find caller
+Plug 'davidhalter/jedi-vim'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
