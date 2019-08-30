@@ -228,9 +228,6 @@ autocmd BufWritePre *.txt :%s/\s\+$//e
 autocmd BufWritePre *.groovy :%s/\s\+$//e
 autocmd BufWritePre *.yaml :%s/\s\+$//e
 
-"Disable spellcheck in erlang
-autocmd FileType erlang setlocal nospell
-
 "Shorter indent for yaml
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2
@@ -337,9 +334,27 @@ endfunction
 autocmd BufEnter * call SetBufDirectory()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RST
+" Tools for editing mostly text based stuff e.g. documentation and git
+" commits
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType rst :setlocal spell
+set spelllang=en_gb
+
+function TextModeEnable()
+    set spell
+    " I briefly considered the following useful, but actually it's kinda
+    " awkward.
+    " set complete+=kspell
+endfunction
+
+function TextModeDisable()
+    set nospell
+    " I briefly considered the following useful, but actually it's kinda
+    " awkward.
+    " set complete-=kspell
+endfunction
+
+autocmd FileType rst call TextModeEnable()
+autocmd FileType gitcommit call TextModeEnable()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Recognise modeline
