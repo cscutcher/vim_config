@@ -85,6 +85,7 @@ Plug 'junkblocker/patchreview-vim'
 " Requires yaourt -S ruby-neovim
 Plug 'codegram/vim-codereview'
 Plug 'tiev/githubreview.vim'
+Plug 'codable/diffreview'
 
 " Critic looked good to see all PRs but seems not to work.
 " Plug 'AGhost-7/critiq.vim'
