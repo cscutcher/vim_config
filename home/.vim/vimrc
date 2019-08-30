@@ -285,9 +285,17 @@ command TMUXPasteReg :let @" = system("tmux save-buffer -")
 " Python Mode and rope
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pymode_folding = 0
-let g:pymode_rope_guess_project = 1
-let g:pymode_rope = 1
+
+" Rope
+if isdirectory(".ropeproject")
+    let g:pymode_rope = 1
+    let g:pymode_rope_autoimport = 1
+else
+    let g:pymode_rope = 0
+    let g:pymode_rope_autoimport = 0
+end
 let g:pymode_rope_complete_on_dot = 0
+
 
 " Prefer line length of 99
 let g:pymode_options_max_line_length = 99
