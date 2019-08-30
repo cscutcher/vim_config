@@ -172,7 +172,7 @@ endif
 " Theme
 
 function! DarkMode()
-    set background=dark 
+    set background=dark
     if (has("termguicolors"))
         set termguicolors
         colo tender
@@ -194,7 +194,7 @@ function! OutsideMode()
 endfunction
 
 function! LowColorMode()
-    set background=dark 
+    set background=dark
     let g:gruvbox_termcolors=16
     color gruvbox
 endfunction
