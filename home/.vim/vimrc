@@ -98,9 +98,6 @@ Plug 'xolox/vim-session'
 " Required by vim-session
 Plug 'xolox/vim-misc'
 
-" Better completion for python + find caller
-Plug 'davidhalter/jedi-vim'
-
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -292,7 +289,6 @@ else
     let g:pymode_rope_autoimport = 0
 end
 let g:pymode_rope_complete_on_dot = 0
-
 
 " Prefer line length of 99
 let g:pymode_options_max_line_length = 99
