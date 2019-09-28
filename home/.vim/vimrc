@@ -267,13 +267,13 @@ command!  -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TMUX helper
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function TMUXCopy() range
+function! TMUXCopy() range
   execute a:firstline.",".a:lastline." write ! cat | tmux load-buffer -"
 endfunction
 
-command -range=% -nargs=0 TMUXCopy :<line1>,<line2>call TMUXCopy()
-command TMUXPaste :read! tmux save-buffer -
-command TMUXPasteReg :let @" = system("tmux save-buffer -")
+command! -range=% -nargs=0 TMUXCopy :<line1>,<line2>call TMUXCopy()
+command! TMUXPaste :read! tmux save-buffer -
+command! TMUXPasteReg :let @" = system("tmux save-buffer -")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python Mode and rope
@@ -335,14 +335,14 @@ autocmd BufEnter * call SetBufDirectory()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set spelllang=en_gb
 
-function TextModeEnable()
+function! TextModeEnable()
     set spell
     " I briefly considered the following useful, but actually it's kinda
     " awkward.
     " set complete+=kspell
 endfunction
 
-function TextModeDisable()
+function! TextModeDisable()
     set nospell
     " I briefly considered the following useful, but actually it's kinda
     " awkward.
@@ -430,7 +430,7 @@ map  N <Plug>(easymotion-prev)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YAPF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command Yapf :0,$!yapf
+command! Yapf :0,$!yapf
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Script to wrap lines without needing to set textwidth
