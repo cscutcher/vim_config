@@ -52,6 +52,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-pathogen'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/ConflictMotions'
 Plug 'vim-scripts/CountJump'
 Plug 'vim-scripts/ingo-library'
@@ -549,3 +550,9 @@ function! BufDeleteHidden()
 endfunction
 
 command! BufDeleteHidden call BufDeleteHidden()
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline Config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
