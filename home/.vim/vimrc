@@ -221,7 +221,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.cpp :%s/\s\+$//e
 autocmd BufWritePre *.hpp :%s/\s\+$//e
 autocmd BufWritePre *.h :%s/\s\+$//e
-autocmd BufWritePre *.rst :%s/\s\+$//e
 autocmd BufWritePre *.txt :%s/\s\+$//e
 autocmd BufWritePre *.groovy :%s/\s\+$//e
 autocmd BufWritePre *.yaml :%s/\s\+$//e
