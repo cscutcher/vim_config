@@ -226,6 +226,7 @@ autocmd BufWritePre *.h :%s/\s\+$//e
 autocmd BufWritePre *.txt :%s/\s\+$//e
 autocmd BufWritePre *.groovy :%s/\s\+$//e
 autocmd BufWritePre *.yaml :%s/\s\+$//e
+autocmd BufWritePre *.ttm :%s/\s\+$//e
 
 "Shorter indent for yaml
 autocmd FileType yaml setlocal tabstop=2
