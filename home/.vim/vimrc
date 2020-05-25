@@ -98,6 +98,8 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'xolox/vim-session'
 " Required by vim-session
 Plug 'xolox/vim-misc'
+" Diff directories
+Plug 'will133/vim-dirdiff'
 
 call plug#end()
 
