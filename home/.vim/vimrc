@@ -401,15 +401,19 @@ let g:localvimrc_persistent=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" detect file changes inbackground
+" detect file changes in background
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd CursorHold * call Timer()
-function! Timer()
-    call feedkeys("f\e")
-    checktime
-endfunction
+" How long before CursorHold triggers
 set updatetime=5000  " milliseconds
+let g:background_update_enable = 1
 
+autocmd CursorHold * call CheckForBackgroundUpdate()
+function! CheckForBackgroundUpdate()
+    if g:background_update_enable == 1
+        call feedkeys("f\e")
+        checktime
+    endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
