@@ -211,6 +211,17 @@ if $COLOR_MODE == "light"
 else
     DarkMode
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Format Lua
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! FormatLua()
+    :%!lua-format
+endfunction
+command! FormatLua call FormatLua()
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific auto commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -227,10 +238,18 @@ autocmd BufWritePre *.txt :%s/\s\+$//e
 autocmd BufWritePre *.groovy :%s/\s\+$//e
 autocmd BufWritePre *.yaml :%s/\s\+$//e
 autocmd BufWritePre *.ttm :%s/\s\+$//e
+autocmd BufWritePre *.lua :%s/\s\+$//e
 
 "Shorter indent for yaml
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2
+
+"Prevent using " on lua
+autocmd FileType lua imap <buffer> <nowait> " '
+autocmd FileType lua inoremap <buffer> <nowait> \" "
+
+" Autoformat lua
+autocmd BufWritePre *.lua :FormatLua
 
 "Prevent using " on python
 autocmd FileType python imap <buffer> <nowait> " '
