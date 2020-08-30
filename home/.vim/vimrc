@@ -101,6 +101,9 @@ Plug 'xolox/vim-misc'
 " Diff directories
 Plug 'will133/vim-dirdiff'
 
+" Ansible highlighting
+Plug 'pearofducks/ansible-vim'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -442,6 +445,7 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = ["pylama"]
 let g:syntastic_python_pylama_exec = "pylava"
 let g:syntastic_rst_checkers = ["rstcheck"]
+let g:syntastic_yaml_checkers = ["yamlxs"]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM Easy Motion
