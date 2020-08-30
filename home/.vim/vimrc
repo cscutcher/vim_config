@@ -297,6 +297,17 @@ command! -range=% -nargs=0 TMUXCopy :<line1>,<line2>call TMUXCopy()
 command! TMUXPaste :read! tmux save-buffer -
 command! TMUXPasteReg :let @" = system("tmux save-buffer -")
 
+function! TMUXPushRegister()
+    if (v:event['regname'] == 't')
+        echom system('tmux load-buffer -', join(v:event.regcontents, "\n"))
+    endif
+endfunction
+
+command! TMUXPullRegister :let @t = system("tmux save-buffer -")
+
+autocmd Signal SIGUSR1 :TMUXPullRegister
+autocmd TextYankPost * :call TMUXPushRegister()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python Mode and rope
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
