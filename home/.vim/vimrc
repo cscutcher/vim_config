@@ -77,6 +77,8 @@ Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 " Useful review tool
 Plug 'junkblocker/patchreview-vim'
+" Highlighting for tridactyl
+Plug 'tridactyl/vim-tridactyl'
 
 " Review PRs from VIM
 " Sadly both have bugs for enterprise github at the moment
@@ -100,6 +102,15 @@ Plug 'will133/vim-dirdiff'
 
 " Ansible highlighting
 Plug 'pearofducks/ansible-vim'
+
+" View color codes
+Plug 'chrisbra/Colorizer'
+
+" Unite for guis and task warrior
+Plug 'Shougo/unite.vim'
+
+" Task warrior
+Plug 'farseer90718/vim-taskwarrior'
 
 call plug#end()
 
