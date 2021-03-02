@@ -64,11 +64,6 @@ Plug 'jacoborus/tender.vim'
 Plug 'ambv/black'
 " Python import sorter
 Plug 'fisadev/vim-isort'
-" Add searching with Python Syntax
-Plug 'mbr/vim-pyre'
-" Collaborative editing tool
-" TODO: Get floobits working
-Plug 'floobits/floobits-neovim'
 " Designed as a bright theme with pastel 'retro groove' colors and light/dark
 " mode switching in the way of solarized. The main focus when developing
 " gruvbox is to keep colors easily distinguishable, contrast enough and still
