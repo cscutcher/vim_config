@@ -112,6 +112,9 @@ Plug 'Shougo/unite.vim'
 " Task warrior
 Plug 'farseer90718/vim-taskwarrior'
 
+" Nix support
+Plug 'LnL7/vim-nix'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
